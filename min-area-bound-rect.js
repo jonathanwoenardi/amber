@@ -13,12 +13,6 @@
  * Point -> [Number, Number]
  */
 
-test = [[2,2],[-2,2],[-4,-2],[4,-2]];
-
-q = Math.PI/2;
-pi = Math.PI;
-tau = 2*Math.PI;
-
 /**
  * Get direction change from vector PQ to vector QR.
  * @param {Point} p
@@ -152,9 +146,9 @@ function getOMABR(arr) {
   var p1 = 0, p2 = 0, p3 = 0, p4 = 0;
   for(; p1 < n; ++p1) {
     // move the pointers
-    while(cum[p2] < cum[p1] + q) p2++;
-    while(cum[p3] < cum[p1] + 2*q) p3++;
-    while(cum[p4] < cum[p1] + 3*q) p4++;
+    while(cum[p2] < cum[p1] + Math.PI/2) p2++;
+    while(cum[p3] < cum[p1] + Math.PI) p3++;
+    while(cum[p4] < cum[p1] + 3*Math.PI/2) p4++;
     prop = getProperties(arr[p1], arr[p1+1], 
                          arr[p2], arr[p3], arr[p4]);
     if(prop[0] < area) {
