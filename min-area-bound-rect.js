@@ -128,6 +128,20 @@ function getProperties(p1a, p1b, p2, p3, p4) {
  */
 function getOMABR(arr) {
   var n = arr.length;
+  if(n === 0) {
+    return [0, [0, 0], [0, 0], [0, 0]];
+  }
+  if(n == 1) {
+    return [0, arr[0], [0, 0], [0, 0]];
+  }
+  if(n == 2) {
+    // line segment
+    p1 = arr[0];
+    p2 = arr[1];
+    var center = getMidpoint(p1, p2);
+    var heightD = [p2[0] - center[0], p2[1] - center[1]];
+    return [0, center, [0, 0], heightD];
+  }
   // duplicate array
   arr = arr.concat(arr);
   var turns = getDirectionChanges(arr);
