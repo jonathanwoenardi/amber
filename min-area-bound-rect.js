@@ -126,7 +126,7 @@ function getProperties(p1a, p1b, p2, p3, p4) {
  * @param {Polygon} arr -- convex polygon with vertices > 2
  * @returns {[area, center, widthDirection, heightDirection]}
  */
-function getOMABR(arr) {
+function getMinAreaBoundRect(arr) {
   var n = arr.length;
   if(n === 0) {
     return [0, [0, 0], [0, 0], [0, 0]];
